@@ -21,3 +21,6 @@ class CriptoValorView:
             destino = input("Moneda origen: ")
 
         self.destino = destino
+
+    def mostrar(self, tasa):
+        print(f"1 {self.origen} son {tasa:.2f} {self.destino}")

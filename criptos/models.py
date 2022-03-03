@@ -5,7 +5,7 @@ from criptos.errors import APIError
 
 
 class CriptoValorModel:
-    def __init__(self,origen: str, destino: str):
+    def __init__(self,origen = "", destino = ""):
         self.origen = origen
         self.destino = destino
 
