@@ -1,8 +1,8 @@
 import requests
 from . import API_KEY, URL_TASA_ESPECIFICA
+from criptos.errors import APIError
 
-class APIError(Exception):
-    pass
+
 
 class CriptoValorModel:
     def __init__(self,origen: str, destino: str):
@@ -16,4 +16,6 @@ class CriptoValorModel:
 
         if self.respuesta.status_code != 200:
             raise APIError(self.respuesta.json()["error"])
-        self.tasa = round(respuesta.json()["rate"],2)
+        
+        self.tasa = round(self.respuesta.json()["rate"],2)
+        
