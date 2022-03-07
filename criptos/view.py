@@ -24,3 +24,9 @@ class CriptoValorView:
 
     def mostrar(self, tasa):
         print(f"1 {self.origen} son {tasa:.2f} {self.destino}")
+
+    def mostrarError(self,error):
+        if error[0] == 401:
+            print("API KEY inválida ")
+        else:
+            print(error[1])
